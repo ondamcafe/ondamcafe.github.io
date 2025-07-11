@@ -11,10 +11,10 @@ import {
   BsCupStraw,
   BsCupHot,
   BsFillHeartFill,
-  BsCup,
   BsClock,
   BsFillJournalBookmarkFill,
 } from "react-icons/bs";
+import breakfast1 from "./icons/breakfast1.svg";
 
 // ------------- Global Style with RTL and Persian font -----------
 
@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Vazir', Tahoma, sans-serif;
     margin: 0;
-    background: #fff;
+    background: #F4FCFB;
     direction: rtl;
     color: #222;
   }
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #8a9a73;
+    background: #5289AD;
     border-radius: 4px;
   }
 `;
@@ -50,7 +50,7 @@ const categoriesData = [
   {
     id: "breakfast",
     title: "صبحانه و میان وعده",
-    icon: <BsCup />,
+    icon: <img src={breakfast1} alt="breakfast icon" width={40} />,
   },
   {
     id: "pastry",
@@ -173,7 +173,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-  background: #8a9a73;
+  background: #698696;
   margin-top: 20px;
   border-radius: 5px  5px  5px 20px;
   display: flex;
@@ -184,7 +184,7 @@ const Header = styled.header`
   position: relative;
 
   .status {
-    background: #5a6156;
+    background: #243C4C;
     padding: 12px 18px;
     border-radius: 5px  5px  5px 20px;
     display: flex;
@@ -202,12 +202,12 @@ const Header = styled.header`
     height: 45px;
     object-fit: contain;
     user-select: none;
-    font-size: 12px;
+    font-size: 11px;
   }
   .search {
     display: flex;
     align-items: center;
-    background: #e5e5e5;
+    background: #EAEFEF;
     border-radius: 30px;
     padding: 15px 25px;
     svg {
@@ -253,8 +253,8 @@ const SearchBar = styled.div`
     font-family: 'Vazir', Tahoma, sans-serif;
 
     &:focus {
-      border-color: #8a9a73;
-      box-shadow: 0 0 10px #a0b576cc;
+      border-color: #B8CFCE;
+      box-shadow: 0 0 10px #7F8CAA;
     }
   }
 
@@ -284,7 +284,7 @@ const CategoryScroll = styled.div`
 `;
 
 const CategoryItem = styled.button`
-  background: ${props => (props.selected ? "#8a9a73" : "#f6f8f4")};
+  background: ${props => (props.selected ? "#7F8CAA" : "#f6f8f4")};
   color: ${props => (props.selected ? "white" : "#333")};
   border-radius:  70px 5px 40px 20px;
   padding: 12px 18px;
@@ -304,11 +304,13 @@ const CategoryItem = styled.button`
 
   svg {
     font-size: 24px;
-    color: ${props => (props.selected ? "#e0ebd5" : "#7a8c70")};
+    color: ${props => (props.selected ? "#e0ebd5" : "#333")};
+    //background:#fff;
+    //padding:5px;
   }
 
   &:hover {
-    background: #8a9a73;
+    background: #7F8CAA;
     color: white;
     svg {
       color: #e0ebd5;
@@ -329,15 +331,15 @@ const CategoryItem = styled.button`
 `;
 
 const CategoryTitle = styled.h2`
-  font-weight: 700;
+  font-weight: 600;
   margin: 32px 0 20px 0;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 20px;
+  font-size: 18px;
 
   svg {
-    color: #8a9a73;
+    color:rgb(44, 44, 44);
   }
 `;
 
@@ -392,6 +394,7 @@ const ProductCard = styled.article`
       overflow-wrap: break-word;
     }
     p.price {
+      margin-top: 50px;
       font-weight: 700;
       color: #555;
       font-size: 15px;
@@ -400,10 +403,10 @@ const ProductCard = styled.article`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
+    //flex-direction: column;
 
     img {
-      width: 100%;
+      width: 180px;
       height: 180px;
       border-radius: 20px;
     }
@@ -411,14 +414,20 @@ const ProductCard = styled.article`
     .content p.desc {
       min-height: auto;
     }
+    
+    .content {
+      margin-left: 10px;
+    }
   }
 `;
 
+
+
 const FooterWrapper = styled.footer`
-  background: #17211e;
+  background: #333446;
   border-radius: 30px 0 0 30px;
   padding: 40px 30px 30px 30px;
-  color: #bfc5bc;
+  color: #EAEFEF;
   direction: rtl;
   display: flex;
   justify-content: space-between;
@@ -428,7 +437,7 @@ const FooterWrapper = styled.footer`
     max-width: 380px;
 
     h2 {
-      color: #e0ebd5;
+      color: #EAEFEF;
       font-weight: 700;
       margin-bottom: 4px;
     }
@@ -440,7 +449,7 @@ const FooterWrapper = styled.footer`
       display: flex;
       gap: 5px;
       align-items: center;
-      color: #a3b79b;
+      color: #B8CFCE;
 
       svg {
         margin-left: 6px;
@@ -464,7 +473,7 @@ const FooterWrapper = styled.footer`
     align-items: center;
 
     .phone-box {
-      background: #596c59;
+      background: #7F8CAA;
       border-radius: 18px;
       color: white;
       padding: 23px 22px;
@@ -486,20 +495,20 @@ const FooterWrapper = styled.footer`
       gap: 24px;
 
       a {
-        color: #c6c9c3;
+        color: #B8CFCE;
         font-size: 28px;
         transition: color 0.4s ease;
       }
 
       a:hover {
-        color: #a9b396;
+        color: rgba(140, 145, 130, 1);
       }
     }
   }
 
   @media (max-width: 768px) {
     flex-direction: column;
-    border-radius: 30px 30px 0 0;
+    border-radius: 20px 90px 0 0;
     padding: 20px 20px 24px 20px;
 
     .info-left {
@@ -544,6 +553,13 @@ function CategorySelect({ categories, selected, setSelected }) {
 function ProductCardComp({ product }) {
   return (
     <ProductCard role="listitem" tabIndex="0" aria-label={`محصول ${product.title}`}>
+
+      <div className="content">
+        <h3>{product.title}</h3>
+        <p className="desc">{product.desc}</p>
+        <p className="price">{product.price}</p>
+      </div>
+
       <img
         src={product.img}
         alt={product.title}
@@ -553,11 +569,6 @@ function ProductCardComp({ product }) {
         decoding="async"
         onError={(e) => (e.target.src = "https://via.placeholder.com/120x120?text=No+Image")}
       />
-      <div className="content">
-        <h3>{product.title}</h3>
-        <p className="desc">{product.desc}</p>
-        <p className="price">{product.price}</p>
-      </div>
     </ProductCard>
   );
 }
@@ -587,24 +598,24 @@ export default function SeenCafeMenu() {
         <Header>
           <div className="status" aria-live="polite" aria-atomic="true">
             <BsCloudSun />
-            سفارش بسته است.
+            ۸ تا  ۲۳ مهمان ما باشید.
           </div>
           <img
             src="https://seencafebakery.ir/wp-content/uploads/2022/11/seen-dark-logo.svg"
-            alt="Seen Cafe Logo"
+            alt="Ondam Cafe Logo"
             className="logo"
             draggable={false}
           />
         </Header>
 
         {/* Search */}
-        <SearchBar role="search" aria-label="جستجو در سین کافه">
+        <SearchBar role="search" aria-label="جستجو در کافه Ondam ">
           <input
             type="search"
-            placeholder="جستجو در سین کافه..."
+            placeholder="جستجو در کافه Ondam ..."
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            aria-label="جستجو در سین کافه"
+            aria-label="جستجو در کافه Ondam "
           />
           <FiSearch aria-hidden="true" />
         </SearchBar>
@@ -646,11 +657,11 @@ export default function SeenCafeMenu() {
         </ProductListGrid>
 
         {/* Footer */}
-        <FooterWrapper role="contentinfo" aria-label="فوتر سایت سین کافه">
+        <FooterWrapper role="contentinfo" aria-label="فوتر سایت  کافه Ondam">
           <div className="info-left">
-            <h2>Seen Café</h2>
+            <h2>Ondam Café</h2>
             <p className="address" aria-label="آدرس کافه">
-              بابل، شهرک بهزاد{" "}
+              بابل، خیابان گل{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -668,27 +679,27 @@ export default function SeenCafeMenu() {
                 <circle cx="12" cy="9" r="2.5" />
               </svg>
             </p>
-            <p className="rights">© تمامی حقوق برای سین کافه محفوظ است.</p>
+            <p className="rights">© تمامی حقوق برای کافه Ondam محفوظ است.</p>
           </div>
           <div className="info-right">
             <div className="phone-box" aria-label="شماره تماس کافه">
               <FiPhone aria-hidden="true" />
-              ۰۹۱۱۱۹۶۷۶۰
+              ۰۹۱۱۳۱۲۴۱۴۵
             </div>
-            <nav className="social" aria-label="شبکه های اجتماعی سین کافه">
+            <nav className="social" aria-label="شبکه های اجتماعی کافه">
               <a
-                href="https://instagram.com/seencafebakery"
+                href="https://instagram.com/zhivanstory"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="اینستاگرام سین کافه"
+                aria-label="اینستاگرام کافه Ondam"
               >
                 <FiInstagram />
               </a>
               <a
-                href="https://wa.me/0911196760"
+                href="https://wa.me/09113124145"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="واتساپ سین کافه"
+                aria-label="واتساپ کافه Ondam"
               >
                 <FiMessageCircle />
               </a>
