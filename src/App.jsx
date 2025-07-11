@@ -8,14 +8,17 @@ import {
 } from "react-icons/fi";
 import {
   BsCloudSun,
-  BsCupStraw,
-  BsCupHot,
-  BsClock,
-  BsFillJournalBookmarkFill,
 } from "react-icons/bs";
 import breakfast1 from "./icons/breakfast1.svg";
 import croissant from "./icons/croissant.svg";
 import h_coffee from "./icons/h-coffee.svg";
+import iced_coffee from "./icons/iced_coffee.svg";
+import tea from "./icons/tea.svg";
+import matcha from "./icons/matcha.svg";
+import brewing from "./icons/brewing.svg";
+import cocktail from "./icons/cocktail.svg";
+import icy from "./icons/icy.svg";
+import hot_drink from "./icons/hot-drink.svg";
 
 
 // ------------- Global Style with RTL and Persian font -----------
@@ -58,7 +61,7 @@ const categoriesData = [
   },
   {
     id: "pastry",
-    title: "بیکری",
+    title: "شیرینی ها",
     icon: <img src={croissant} alt="bakery icon" width={40} />,
   },
   {
@@ -69,32 +72,36 @@ const categoriesData = [
   {
     id: "iced-espresso",
     title: "نوشیدنی سرد بر پایه اسپرسو",
-    icon: <BsCupStraw/>,
+    icon: <img src={iced_coffee} alt="iced-bar icon" width={40} />,
   },
   {
     id: "tea",
     title: "چای و دمنوش",
-    icon: <BsCupStraw />,
+    icon: <img src={tea} alt="tea icon" width={40} />,
   },
   {
     id: "drip-coffee",
     title: "قهوه های دمی",
-    icon: <BsClock />,
-  },
+    icon: <img src={brewing} alt="matcha icon" width={40} />,  },
   {
     id: "iced-matcha",
     title: "آیس ماچا",
-    icon: <BsCloudSun />,
+    icon: <img src={matcha} alt="matcha icon" width={40} />,
+  },
+    {
+    id: "hot-drinks",
+    title: "نوشیدنی گرم",
+    icon: <img src={hot_drink} alt="hot-drink icon" width={40} />,
   },
   {
     id: "cold-drinks",
     title: "نوشیدنی سرد",
-    icon: <BsCupStraw />,
+    icon: <img src={cocktail} alt="cocktail icon" width={40} />,
   },
   {
     id: "icy",
-    title: "آیس",
-    icon: <BsFillJournalBookmarkFill />,
+    title: "شیک و اسموتی",
+    icon: <img src={icy} alt="ice-cream icon" width={40} />,
   },
 ];
 
@@ -248,17 +255,22 @@ const SearchBar = styled.div`
 
   input {
     width: 100%;
-    padding: 14px 46px 14px 14px;
     border-radius: 14px;
-    border: 1px solid #ccc;
     font-size: 15px;
-    outline: none;
-    transition: border-color 0.3s ease;
     font-family: 'Vazir', Tahoma, sans-serif;
 
+    border: none;
+    outline: none;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(15, 15, 15, 0.3);
+    transition: 300ms ease-in-out;
+
     &:focus {
-      border-color: #8a9a73;
-      box-shadow: 0 0 10px #a0b576cc;
+      background-color: white;
+      transform: scale(1.05);
+      box-shadow: 13px 13px 100px #969696,
+        -13px -13px 100px #ffffff;
     }
   }
 
@@ -302,26 +314,19 @@ const CategoryItem = styled.button`
   gap: 6px;
   font-size: 12px;
   cursor: pointer;
-
-
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #f9f9f9;
-
   user-select: none;
-  border: none;
+  border: ${props => (props.selected ? "1px solid rgba(0,0,0,0.1)" : "1px solid rgba(0,0,0,0)")};
   box-shadow: ${props =>
-    props.selected ? "inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #f9f9f9" : "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff"};
+    props.selected ? "inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);" : "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff"};
   transition: 0.3s all;
 
   svg {
     font-size: 24px;
     color: ${props => (props.selected ? "#252525ff" : "#333")};
-    //background:#fff;
-    //padding:5px;
   }
 
   &:hover {
-    //background: #d1d1d1ff;
-    //color: black;
     svg {
       color: #1b1b1bff;
     }
@@ -330,7 +335,6 @@ const CategoryItem = styled.button`
   @media (max-width: 768px) {
     min-width: 78px;
     padding: 14px 14px 12px 10px;
-    //border-radius: 50%;
     
     font-size: 12.5px;
     svg {
@@ -413,7 +417,6 @@ const ProductCard = styled.article`
   }
 
   @media (max-width: 768px) {
-    //flex-direction: column;
 
     img {
       width: 180px;
