@@ -184,6 +184,124 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
+
+  .header1 {
+    --primary: #fff;
+    --neutral-1: #e6e6e6;
+    --neutral-2: #6e6e6e;
+    --radius: 10px;
+
+    cursor: pointer;
+    border-radius: var(--radius);
+    color: #4a4a4a;
+    border: none;
+    box-shadow:
+      0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 4px 5px 0px rgba(0, 0, 0, 0.05);
+
+    position: relative;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    height: 70px;
+    font-style: normal;
+    font-size: 19px;
+    font-weight: 500;
+  }
+  .header1::after {
+    content: "";
+    inset: -7px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.4),
+      inset 0 -2px 2px rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    transition: all 0.5s ease 0.2s;
+    z-index: 0;
+  }
+  .bg {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    background:
+      linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45))
+        border-box;
+    z-index: 1;
+    transition: all 0.4s ease;
+  }
+  .bg-spin {
+    position: absolute;
+    border-radius: inherit;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    inset: -5px;
+  }
+  .bg-spin::before {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    filter: blur(20px);
+    background: conic-gradient(
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 80%,
+      transparent 100%
+    );
+    animation: spin 2s linear infinite;
+    animation-play-state: paused;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .button:hover .bg-spin {
+    opacity: 1;
+  }
+  .button:hover .bg-spin::before {
+    animation-play-state: running;
+  }
+
+  .bg-gradient {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 13px;
+    inset: -7px;
+    z-index: 0;
+    opacity: 0.3;
+    transition: all 0.5s linear;
+    filter: blur(10px);
+  }
+  .button:hover .bg-gradient {
+    opacity: 1;
+  }
+  .bg-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    margin: auto;
+    aspect-ratio: 1;
+    background-image: linear-gradient(
+      90deg,
+      #0d3fe4,
+      #ff52e2,
+      #fd4845,
+      #f7d35b,
+      #50f77d,
+      #25e1e4
+    );
+    animation: spin 2s linear infinite;
+  }
+
   background: #697565;
   margin-top: 20px;
   border-radius: 5px  5px  5px 20px;
@@ -369,28 +487,60 @@ const ProductListGrid = styled.div`
 `;
 
 const ProductCard = styled.article`
-  background: #fbfdf9;
+  --bg: #e8e8e8;
+  --contrast: #e2e0e0;
+  --grey: #93a1a1;
   border-radius: 18px;
-  padding: 15px;
-  box-shadow: 4px 4px 8px #dbe1d6, -4px -4px 8px #fbfdf9;
-  display: flex;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: grid;
   gap: 16px;
   align-items: center;
+  position: relative;
+  padding: 9px;
+  background-color: var(--bg);
+  border-radius: 35px;
+
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+    filter: opacity(10%) contrast(105%);
+  }
+
+  .card-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--contrast);
+    border-radius: 30px;
+    direction: rtl;
+  }
 
   img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
-    border-radius: 18px;
-    background-color: #f1f3eb;
+    border-radius: 24px;
     user-select: none;
+    margin: 10px;
+    background-color: #eee;
+    text-align: center;
+    box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff, 5px 5px 10px #ffffff,
+      -5px -5px 10px #eee;
+    transition: 0.5s;
   }
 
   .content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 20px;
+    margin-right: 16px;
+    margin-top: 16px;
 
     h3 {
       margin: 0;
@@ -419,8 +569,9 @@ const ProductCard = styled.article`
   @media (max-width: 768px) {
 
     img {
-      width: 180px;
-      height: 180px;
+      width: 130px;
+      height: 130px;
+
       border-radius: 20px;
     }
 
@@ -433,6 +584,8 @@ const ProductCard = styled.article`
     }
   }
 `;
+
+
 
 
 
@@ -566,22 +719,25 @@ function CategorySelect({ categories, selected, setSelected }) {
 function ProductCardComp({ product }) {
   return (
     <ProductCard role="listitem" tabIndex="0" aria-label={`محصول ${product.title}`}>
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <div className="content">
+            <h3>{product.title}</h3>
+            <p className="desc">{product.desc}</p>
+            <p className="price">{product.price}</p>
+          </div>
+          <img
+            src={product.img}
+            alt={product.title}
+            loading="lazy"
+            width={100}
+            height={100}
+            decoding="async"
+            onError={(e) => (e.target.src = "https://via.placeholder.com/120x120?text=No+Image")}
+          />
+        </div>
 
-      <div className="content">
-        <h3>{product.title}</h3>
-        <p className="desc">{product.desc}</p>
-        <p className="price">{product.price}</p>
-      </div>
-
-      <img
-        src={product.img}
-        alt={product.title}
-        loading="lazy"
-        width={100}
-        height={100}
-        decoding="async"
-        onError={(e) => (e.target.src = "https://via.placeholder.com/120x120?text=No+Image")}
-      />
+      
     </ProductCard>
   );
 }
@@ -608,7 +764,12 @@ export default function SeenCafeMenu() {
       <GlobalStyle />
       <Container>
         {/* Header */}
-        <Header>
+        <Header class="header1">
+            <div class="bg"></div>
+            <div class="bg-spin"></div>
+            <div class="bg-gradient"></div>
+
+          
           <div className="status" aria-live="polite" aria-atomic="true">
             <BsCloudSun />
             ۸ تا  ۲۳ مهمان ما باشید.
