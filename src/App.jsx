@@ -184,133 +184,81 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
-
-  .header1 {
-    --primary: #fff;
-    --neutral-1: #e6e6e6;
-    --neutral-2: #6e6e6e;
-    --radius: 10px;
-
-    cursor: pointer;
-    border-radius: var(--radius);
-    color: #4a4a4a;
-    border: none;
-    box-shadow:
-      0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2),
-      0 10px 20px rgba(0, 0, 0, 0.2),
-      0 4px 5px 0px rgba(0, 0, 0, 0.05);
-
-    position: relative;
-    transition: all 0.3s ease;
-    min-width: 200px;
-    height: 70px;
-    font-style: normal;
-    font-size: 19px;
-    font-weight: 500;
-  }
-  .header1::after {
-    content: "";
-    inset: -7px;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow:
-      0 8px 32px 0 rgba(31, 38, 135, 0.4),
-      inset 0 -2px 2px rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    transition: all 0.5s ease 0.2s;
-    z-index: 0;
-  }
-  .bg {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius);
-    background:
-      linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45))
-        border-box;
-    z-index: 1;
-    transition: all 0.4s ease;
-  }
-  .bg-spin {
-    position: absolute;
-    border-radius: inherit;
-    overflow: hidden;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    inset: -5px;
-  }
-  .bg-spin::before {
-    content: "";
-    position: absolute;
-    inset: -100%;
-    filter: blur(20px);
-    background: conic-gradient(
-      transparent 30%,
-      rgba(255, 255, 255, 0.1) 80%,
-      transparent 100%
-    );
-    animation: spin 2s linear infinite;
-    animation-play-state: paused;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .button:hover .bg-spin {
-    opacity: 1;
-  }
-  .button:hover .bg-spin::before {
-    animation-play-state: running;
-  }
-
-  .bg-gradient {
-    position: absolute;
-    overflow: hidden;
-    border-radius: 13px;
-    inset: -7px;
-    z-index: 0;
-    opacity: 0.3;
-    transition: all 0.5s linear;
-    filter: blur(10px);
-  }
-  .button:hover .bg-gradient {
-    opacity: 1;
-  }
-  .bg-gradient::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    margin: auto;
-    aspect-ratio: 1;
-    background-image: linear-gradient(
-      90deg,
-      #0d3fe4,
-      #ff52e2,
-      #fd4845,
-      #f7d35b,
-      #50f77d,
-      #25e1e4
-    );
-    animation: spin 2s linear infinite;
-  }
-
-  background: #697565;
-  margin-top: 20px;
+  .card {
+  margin-top: 15px;
   border-radius: 5px  5px  5px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  padding: 15px 25px;
+  color: #ccc;
+  padding: 35px 25px;
   position: relative;
+  border: none;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  background: lightgrey;
+  box-shadow: rgba(59, 59, 59, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  z-index: 0;
+  overflow: hidden;
+  }
+
+  .card__content {
+    background: linear-gradient(rgba(143, 143, 143, 0.36), rgba(150, 150, 150, 0.1));
+    z-index: -1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: absolute;
+    width: 100%;
+    box-shadow: "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff";
+    transition: 0.5s;
+  }
+
+  .blob {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    filter: blur(15px);
+    opacity: 0.6;
+  }
+
+  .blob-1 {
+    left: -65px;
+    top: -45px;
+    background: #2F5249;
+    background: -webkit-linear-gradient(to bottom, #555879, #898AC4, #748873);
+    background: linear-gradient(to bottom, #333446, #7F8CAA, #B0DB9C);
+    transform: rotate(12deg);
+  }
+
+  .blob-2 {
+    left: -30px;
+    top: 120px;
+    background: #FFFA8D;
+    background: -webkit-linear-gradient(to bottom, #547792, #E9F5BE);
+    background: linear-gradient(to bottom, #9FB3DF, #A0C878);
+    transform: rotate(20deg);
+  }
+
+  .blob-3 {
+    right: -60px;
+    bottom: -10px;
+    background: #854836;
+    background: -webkit-linear-gradient(to bottom, #727D73, #3D3D3D);
+    background: linear-gradient(to bottom, #3A3960, #7C444F);
+    transform: rotate(-10deg);
+  }
+
+  .blob-4 {
+    right: -70px;
+    top: 20px;
+    background: #D8C4B6;
+    background: -webkit-linear-gradient(to bottom right, #3E5879, #E5D9F2, #131010);
+    background: linear-gradient(to bottom right, #9AA6B2, #4B5945, #685752);
+    transform: rotate(-25deg);
+  }
 
   .status {
     background: #3C3D37;
@@ -332,6 +280,7 @@ const Header = styled.header`
     object-fit: contain;
     user-select: none;
     font-size: 11px;
+    color: #404040;
   }
   .search {
     display: flex;
@@ -354,7 +303,7 @@ const Header = styled.header`
   }
 
   @media (max-width: 768px) {
-    padding: 10px 15px;
+    padding: 10px 5px;
     .status {
       font-size: 12px;
       padding: 10px 14px;
@@ -368,7 +317,7 @@ const Header = styled.header`
 
 const SearchBar = styled.div`
   margin: 25px 0 10px 0;
-  max-width: 700px;
+  max-width: 1200px;
   position: relative;
 
   input {
@@ -382,11 +331,11 @@ const SearchBar = styled.div`
     padding: 1em;
     background-color: #ccc;
     box-shadow: inset 2px 5px 10px rgba(15, 15, 15, 0.3);
-    transition: 300ms ease-in-out;
+    transition: 400ms ease-in-out;
 
     &:focus {
       background-color: white;
-      transform: scale(1.05);
+      transform: scale(1.01);
       box-shadow: 13px 13px 100px #969696,
         -13px -13px 100px #ffffff;
     }
@@ -399,6 +348,7 @@ const SearchBar = styled.div`
     transform: translateY(-50%);
     color: #888;
     font-size: 20px;
+    transition: 300ms ease-in-out;
   }
 `;
 
@@ -764,13 +714,14 @@ export default function SeenCafeMenu() {
       <GlobalStyle />
       <Container>
         {/* Header */}
-        <Header class="header1">
-            <div class="bg"></div>
-            <div class="bg-spin"></div>
-            <div class="bg-gradient"></div>
-
-          
-          <div className="status" aria-live="polite" aria-atomic="true">
+        <Header>
+          <div class="card">
+            <div class="card__content"></div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+            <div className="status" aria-live="polite" aria-atomic="true">
             <BsCloudSun />
             ۸ تا  ۲۳ مهمان ما باشید.
           </div>
@@ -780,6 +731,8 @@ export default function SeenCafeMenu() {
             className="logo"
             draggable={false}
           />
+          </div>
+          
         </Header>
 
         {/* Search */}
