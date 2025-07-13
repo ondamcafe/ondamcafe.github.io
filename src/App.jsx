@@ -19,6 +19,7 @@ import brewing from "./icons/brewing.svg";
 import cocktail from "./icons/cocktail.svg";
 import icy from "./icons/icy.svg";
 import hot_drink from "./icons/hot-drink.svg";
+import open from "./icons/open.svg";
 
 
 // ------------- Global Style with RTL and Persian font -----------
@@ -186,6 +187,7 @@ const Container = styled.div`
 const Header = styled.header`
   .card {
   margin-top: 15px;
+  margin-bottom: 15px;
   border-radius: 5px  5px  5px 20px;
   display: flex;
   justify-content: space-between;
@@ -260,18 +262,45 @@ const Header = styled.header`
     transform: rotate(-25deg);
   }
 
+  .del {
+    position: relative;  margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .del div {
+    display: flex;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    //border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    //border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px 5px  5px  5px ;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    z-index: 1;
+  }
+
   .status {
-    background: #3C3D37;
-    padding: 12px 18px;
-    border-radius: 5px  5px  5px 20px;
+    margin-right: -40%;
+    margin-bottom: -40%;
+    color:#111;
+    padding: 10px;
     display: flex;
     align-items: center;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
-    svg {
+    background: #e8e8e8;
+    box-shadow: inset 5px 5px 17px #c8c8c8,
+      inset -5px -5px 17px #ffffff;
+    .img1 {
       margin-left: 8px;
-      color: white;
       font-size: 18px;
+      font-weight: 600;
+      width: 17px;
     }
   }
   img.logo {
@@ -281,6 +310,7 @@ const Header = styled.header`
     user-select: none;
     font-size: 11px;
     color: #404040;
+    font-weight: 600;
   }
   .search {
     display: flex;
@@ -306,7 +336,10 @@ const Header = styled.header`
     padding: 10px 5px;
     .status {
       font-size: 12px;
-      padding: 10px 14px;
+    }
+    .del div{
+      padding-bottom:20px;
+      padding-right:20px;
     }
     img.logo {
       width: 90px;
@@ -319,6 +352,7 @@ const SearchBar = styled.div`
   margin: 25px 0 10px 0;
   max-width: 1200px;
   position: relative;
+
 
   input {
     width: 100%;
@@ -368,7 +402,7 @@ const CategoryScroll = styled.div`
 `;
 
 const CategoryItem = styled.button`
-  background: ${props => (props.selected ? "#e0e0e0" : "linear-gradient(145deg, #d6d6d6, #ffffff)")};
+  background: ${props => (props.selected ? "#ecececff" : "linear-gradient(145deg, #d6d6d6, #ffffff)")};
   color: ${props => (props.selected ? "black" : "#333")};
   border-radius:  70px 5px 40px 20px;
   padding: 12px 18px;
@@ -384,20 +418,22 @@ const CategoryItem = styled.button`
   cursor: pointer;
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #f9f9f9;
   user-select: none;
-  border: ${props => (props.selected ? "1px solid rgba(0,0,0,0.1)" : "1px solid rgba(0,0,0,0)")};
+  border: ${props => (props.selected ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0,0,0,0)")};
   box-shadow: ${props =>
     props.selected ? "inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);" : "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff"};
-  transition: 0.3s all;
-
-  svg {
-    font-size: 24px;
-    color: ${props => (props.selected ? "#252525ff" : "#333")};
-  }
+  transition: 400ms ease-in-out;
 
   &:hover {
+    //background-color: white;
+    transform: scale(1.05);
+    //box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
     svg {
       color: #1b1b1bff;
     }
+  }
+  svg {
+    font-size: 24px;
+    color: ${props => (props.selected ? "#252525ff" : "#333")};
   }
 
   @media (max-width: 768px) {
@@ -666,6 +702,23 @@ function CategorySelect({ categories, selected, setSelected }) {
   );
 }
 
+function checkServiceTime() {
+  const currentHour = new Date().getHours();
+  const statusElement = document.getElementById("status");
+  const messageElement = statusElement.querySelector(".message");
+
+  if (currentHour >= 8 && currentHour < 22) {
+    // زمان سرویس‌دهی
+    messageElement.textContent = "سفارش در حال انجام است.";
+  } else {
+    // خارج از زمان سرویس‌دهی
+    messageElement.textContent = "خارج از زمان سرویس‌دهی ";
+  }
+}
+document.addEventListener("DOMContentLoaded", checkServiceTime);
+
+
+
 function ProductCardComp({ product }) {
   return (
     <ProductCard role="listitem" tabIndex="0" aria-label={`محصول ${product.title}`}>
@@ -721,16 +774,18 @@ export default function SeenCafeMenu() {
             <div class="blob blob-2"></div>
             <div class="blob blob-3"></div>
             <div class="blob blob-4"></div>
-            <div className="status" aria-live="polite" aria-atomic="true">
-            <BsCloudSun />
-            ۸ تا  ۲۳ مهمان ما باشید.
-          </div>
-          <img
-            src="https://seencafebakery.ir/wp-content/uploads/2022/11/seen-dark-logo.svg"
-            alt="Ondam Cafe Logo"
-            className="logo"
-            draggable={false}
-          />
+            <div class="del">
+              <div className="status" id="status" aria-live="polite" aria-atomic="true">
+                <img src={open} alt="open" width={10} class="img1"/>
+                <span class="message">سفارش بسته است.</span>
+              </div>   
+            </div>
+            <img
+              src="https://seencafebakery.ir/wp-content/uploads/2022/11/seen-dark-logo.svg"
+              alt="Ondam Cafe Logo"
+              className="logo"
+              draggable={false}
+            />
           </div>
           
         </Header>
