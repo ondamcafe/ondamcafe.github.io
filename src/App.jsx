@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import {
   FiSearch,
@@ -6,9 +6,6 @@ import {
   FiInstagram,
   FiMessageCircle,
 } from "react-icons/fi";
-import {
-  BsCloudSun,
-} from "react-icons/bs";
 import breakfast1 from "./icons/breakfast1.svg";
 import croissant from "./icons/croissant.svg";
 import h_coffee from "./icons/h-coffee.svg";
@@ -19,8 +16,8 @@ import brewing from "./icons/brewing.svg";
 import cocktail from "./icons/cocktail.svg";
 import icy from "./icons/icy.svg";
 import hot_drink from "./icons/hot-drink.svg";
-import open from "./icons/open.svg";
-
+import openSVG from "./icons/open.svg";
+import closeSVG from "./icons/close.svg";
 
 // ------------- Global Style with RTL and Persian font -----------
 
@@ -83,13 +80,14 @@ const categoriesData = [
   {
     id: "drip-coffee",
     title: "قهوه های دمی",
-    icon: <img src={brewing} alt="matcha icon" width={40} />,  },
+    icon: <img src={brewing} alt="matcha icon" width={40} />,
+  },
   {
     id: "iced-matcha",
     title: "آیس ماچا",
     icon: <img src={matcha} alt="matcha icon" width={40} />,
   },
-    {
+  {
     id: "hot-drinks",
     title: "نوشیدنی گرم",
     icon: <img src={hot_drink} alt="hot-drink icon" width={40} />,
@@ -114,15 +112,14 @@ const productsData = {
       title: "تست آووکادو",
       desc: "نان خمیر ترش،پوره آووکادو، تخم مرغ آب‌پز",
       price: "۳۷۵,۰۰۰ تومان",
-      img:"https://cdn.sallocoffee.com/avocado-toast.jpg",
+      img: "https://cdn.sallocoffee.com/avocado-toast.jpg",
     },
     {
       id: 2,
       title: "تست چیز بیکن",
       desc: "نان خمیر ترش، بیکن، تخم مرغ، پنیر، پیتزا قارچ",
       price: "۲۶۵,۰۰۰ تومان",
-      img:
-        "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
   ],
   "hot-espresso": [
@@ -131,16 +128,14 @@ const productsData = {
       title: "قهوه فرانسه",
       desc: "عصاره گیری به روش فرانسه",
       price: "۲۲۰,۰۰۰ تومان",
-      img:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
       title: "بدون کافئین",
       desc: "گزینه بدون کافئین",
       price: "۲۳۰,۰۰۰ تومان",
-      img:
-        "https://via.placeholder.com/120x120?text=No_Image",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
     },
   ],
   "iced-espresso": [
@@ -149,16 +144,14 @@ const productsData = {
       title: "آیس چاکلت دوپاتی",
       desc: "همجورای شکلات سرد و پوره توت فرنگی",
       price: "۱۲۰,۰۰۰ تومان",
-      img:
-        "https://via.placeholder.com/120x120?text=Ice_Chocolate",
+      img: "https://via.placeholder.com/120x120?text=Ice_Chocolate",
     },
     {
       id: 2,
       title: "آیس دبی چاکلت",
       desc: "همجورای شکلات سرد و کرم پسته",
       price: "۱۳۰,۰۰۰ تومان",
-      img:
-        "https://via.placeholder.com/120x120?text=Ice_Dubai_Chocolate",
+      img: "https://via.placeholder.com/120x120?text=Ice_Dubai_Chocolate",
     },
   ],
   tea: [
@@ -167,8 +160,7 @@ const productsData = {
       title: "دمنوش زعفران",
       desc: "دمنوش گرم با عطر زعفران",
       price: "۹۵,۰۰۰ تومان",
-      img:
-        "https://via.placeholder.com/120x120?text=Saffron_Tea",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
     },
   ],
 };
@@ -200,7 +192,7 @@ const Header = styled.header`
   transition: 0.5s;
   transition-property: box-shadow;
   background: lightgrey;
-  box-shadow: rgba(59, 59, 59, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+  box-shadow:  0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
   z-index: 0;
   overflow: hidden;
   }
@@ -271,36 +263,23 @@ const Header = styled.header`
 
   .del div {
     display: flex;
-    background: rgba(255, 255, 255, 0.14);
-    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
-                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-      inset -4px -4px 6px 0 rgba(255,255,255,.2),
-      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-    //border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    //border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px 5px  5px  5px ;
-    padding-bottom: 20px;
-    padding-right: 30px;
     z-index: 1;
   }
 
   .status {
-    margin-right: -40%;
-    margin-bottom: -40%;
+    margin-right: -100%;
+    margin-top: -50%;
     color:#111;
     padding: 10px;
     display: flex;
     align-items: center;
     font-weight: 600;
     font-size: 14px;
-    background: #e8e8e8;
-    box-shadow: inset 5px 5px 17px #c8c8c8,
-      inset -5px -5px 17px #ffffff;
+    color:#444;
     .img1 {
-      margin-left: 8px;
       font-size: 18px;
       font-weight: 600;
-      width: 17px;
+      width: 60px;
     }
   }
   img.logo {
@@ -353,12 +332,11 @@ const SearchBar = styled.div`
   max-width: 1200px;
   position: relative;
 
-
   input {
     width: 100%;
     border-radius: 14px;
     font-size: 15px;
-    font-family: 'Vazir', Tahoma, sans-serif;
+    font-family: "Vazir", Tahoma, sans-serif;
 
     border: none;
     outline: none;
@@ -370,8 +348,7 @@ const SearchBar = styled.div`
     &:focus {
       background-color: white;
       transform: scale(1.01);
-      box-shadow: 13px 13px 100px #969696,
-        -13px -13px 100px #ffffff;
+      box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
     }
   }
 
@@ -402,9 +379,10 @@ const CategoryScroll = styled.div`
 `;
 
 const CategoryItem = styled.button`
-  background: ${props => (props.selected ? "#ecececff" : "linear-gradient(145deg, #d6d6d6, #ffffff)")};
-  color: ${props => (props.selected ? "black" : "#333")};
-  border-radius:  70px 5px 40px 20px;
+  background: ${(props) =>
+    props.selected ? "#ecececff" : "linear-gradient(145deg, #d6d6d6, #ffffff)"};
+  color: ${(props) => (props.selected ? "black" : "#333")};
+  border-radius: 70px 5px 40px 20px;
   padding: 12px 18px;
   margin-right: 9px;
   margin-left: -8px;
@@ -418,9 +396,14 @@ const CategoryItem = styled.button`
   cursor: pointer;
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #f9f9f9;
   user-select: none;
-  border: ${props => (props.selected ? "1px solid rgba(255, 255, 255, 0.1)" : "1px solid rgba(0,0,0,0)")};
-  box-shadow: ${props =>
-    props.selected ? "inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);" : "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff"};
+  border: ${(props) =>
+    props.selected
+      ? "1px solid rgba(255, 255, 255, 0.1)"
+      : "1px solid rgba(0,0,0,0)"};
+  box-shadow: ${(props) =>
+    props.selected
+      ? "inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255,255,255,0.7), -0.5px -0.5px 0px rgba(255,255,255,1), 0.5px 0.5px 0px rgba(0,0,0,0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);"
+      : "5px 5px 10px #d4d4d4, -5px -5px 10px #ffffff"};
   transition: 400ms ease-in-out;
 
   &:hover {
@@ -433,13 +416,13 @@ const CategoryItem = styled.button`
   }
   svg {
     font-size: 24px;
-    color: ${props => (props.selected ? "#252525ff" : "#333")};
+    color: ${(props) => (props.selected ? "#252525ff" : "#333")};
   }
 
   @media (max-width: 768px) {
     min-width: 78px;
     padding: 14px 14px 12px 10px;
-    
+
     font-size: 12.5px;
     svg {
       font-size: 26px;
@@ -457,13 +440,13 @@ const CategoryTitle = styled.h2`
   font-size: 18px;
 
   svg {
-    color:rgb(44, 44, 44);
+    color: rgb(44, 44, 44);
   }
 `;
 
 const ProductListGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
   margin-bottom: 50px;
 
@@ -477,7 +460,9 @@ const ProductCard = styled.article`
   --contrast: #e2e0e0;
   --grey: #93a1a1;
   border-radius: 18px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: grid;
   gap: 16px;
   align-items: center;
@@ -486,12 +471,15 @@ const ProductCard = styled.article`
   background-color: var(--bg);
   border-radius: 35px;
 
-
   .card-overlay {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+    background: repeating-conic-gradient(
+        var(--bg) 0.0000001%,
+        var(--grey) 0.000104%
+      )
+      60% 60%/600% 600%;
     filter: opacity(10%) contrast(105%);
   }
 
@@ -515,8 +503,8 @@ const ProductCard = styled.article`
     margin: 10px;
     background-color: #eee;
     text-align: center;
-    box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff, 5px 5px 10px #ffffff,
-      -5px -5px 10px #eee;
+    box-shadow: inset 5px 5px 10px #bbb, inset -5px -5px 10px #fff,
+      5px 5px 10px #ffffff, -5px -5px 10px #eee;
     transition: 0.5s;
   }
 
@@ -553,7 +541,6 @@ const ProductCard = styled.article`
   }
 
   @media (max-width: 768px) {
-
     img {
       width: 130px;
       height: 130px;
@@ -564,16 +551,12 @@ const ProductCard = styled.article`
     .content p.desc {
       min-height: auto;
     }
-    
+
     .content {
       margin-left: 10px;
     }
   }
 `;
-
-
-
-
 
 const FooterWrapper = styled.footer`
   background: #17211e;
@@ -658,6 +641,8 @@ const FooterWrapper = styled.footer`
     }
   }
 
+  
+
   @media (max-width: 768px) {
     flex-direction: column;
     border-radius: 20px 90px 0 0;
@@ -702,45 +687,32 @@ function CategorySelect({ categories, selected, setSelected }) {
   );
 }
 
-function checkServiceTime() {
-  const currentHour = new Date().getHours();
-  const statusElement = document.getElementById("status");
-  const messageElement = statusElement.querySelector(".message");
-
-  if (currentHour >= 8 && currentHour < 22) {
-    // زمان سرویس‌دهی
-    messageElement.textContent = "سفارش در حال انجام است.";
-  } else {
-    // خارج از زمان سرویس‌دهی
-    messageElement.textContent = "خارج از زمان سرویس‌دهی ";
-  }
-}
-document.addEventListener("DOMContentLoaded", checkServiceTime);
-
-
-
 function ProductCardComp({ product }) {
   return (
-    <ProductCard role="listitem" tabIndex="0" aria-label={`محصول ${product.title}`}>
-        <div class="card-overlay"></div>
-        <div class="card-inner">
-          <div className="content">
-            <h3>{product.title}</h3>
-            <p className="desc">{product.desc}</p>
-            <p className="price">{product.price}</p>
-          </div>
-          <img
-            src={product.img}
-            alt={product.title}
-            loading="lazy"
-            width={100}
-            height={100}
-            decoding="async"
-            onError={(e) => (e.target.src = "https://via.placeholder.com/120x120?text=No+Image")}
-          />
+    <ProductCard
+      role="listitem"
+      tabIndex="0"
+      aria-label={`محصول ${product.title}`}
+    >
+      <div class="card-overlay"></div>
+      <div class="card-inner">
+        <div className="content">
+          <h3>{product.title}</h3>
+          <p className="desc">{product.desc}</p>
+          <p className="price">{product.price}</p>
         </div>
-
-      
+        <img
+          src={product.img}
+          alt={product.title}
+          loading="lazy"
+          width={100}
+          height={100}
+          decoding="async"
+          onError={(e) =>
+            (e.target.src = "https://via.placeholder.com/120x120?text=No+Image")
+          }
+        />
+      </div>
     </ProductCard>
   );
 }
@@ -748,7 +720,9 @@ function ProductCardComp({ product }) {
 //  --------- Main Component --------
 
 export default function SeenCafeMenu() {
-  const [selectedCategory, setSelectedCategory] = useState(categoriesData[0].id);
+  const [selectedCategory, setSelectedCategory] = useState(
+    categoriesData[0].id
+  );
   const [searchValue, setSearchValue] = useState("");
 
   const filteredProducts = useMemo(() => {
@@ -761,6 +735,19 @@ export default function SeenCafeMenu() {
         (p.desc && p.desc.includes(searchValue))
     );
   }, [selectedCategory, searchValue]);
+
+  const [isLightOn, setIsLightOn] = useState(false);
+  useEffect(() => {
+    const checkTime = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      setIsLightOn(hour >= 8 && hour < 23);
+    };
+    checkTime();
+
+    const interval = setInterval(checkTime, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -775,10 +762,18 @@ export default function SeenCafeMenu() {
             <div class="blob blob-3"></div>
             <div class="blob blob-4"></div>
             <div class="del">
-              <div className="status" id="status" aria-live="polite" aria-atomic="true">
-                <img src={open} alt="open" width={10} class="img1"/>
-                <span class="message">سفارش بسته است.</span>
-              </div>   
+              <div
+                className="status"
+                id="status"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <img
+                  src={isLightOn ? openSVG : closeSVG}
+                  alt="status"
+                  width={59}
+                />
+              </div>
             </div>
             <img
               src="https://seencafebakery.ir/wp-content/uploads/2022/11/seen-dark-logo.svg"
@@ -787,7 +782,6 @@ export default function SeenCafeMenu() {
               draggable={false}
             />
           </div>
-          
         </Header>
 
         {/* Search */}
@@ -811,9 +805,7 @@ export default function SeenCafeMenu() {
 
         {/* Category title */}
         <CategoryTitle role="heading" aria-level={2}>
-          {
-            categoriesData.find((cat) => cat.id === selectedCategory)?.icon
-          }
+          {categoriesData.find((cat) => cat.id === selectedCategory)?.icon}
           {categoriesData.find((cat) => cat.id === selectedCategory)?.title}
         </CategoryTitle>
 
