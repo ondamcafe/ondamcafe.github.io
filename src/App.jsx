@@ -658,7 +658,7 @@ const FooterWrapper = styled.footer`
 
   .info-left {
     max-width: 380px;
-    //z-index:2;
+    z-index:3;
 
     h2 {
       color: #111;
@@ -668,7 +668,7 @@ const FooterWrapper = styled.footer`
 
     .address {
       opacity: 0.9;
-      margin: 8px 0 12px 0;
+      margin: 8px 0 30px 0;
       font-size: 13px;
       display: flex;
       gap: 5px;
@@ -684,13 +684,18 @@ const FooterWrapper = styled.footer`
     }
 
     .rights {
-      margin: 24px 0 0 0;
+      margin: 0 0 0 -24px;
       font-size: 12px;
       opacity: 0.5;
       user-select: none;
       color: #000000ff;
-      font-weight: 700;
-    }
+      font-weight:400;
+    
+        a {
+          color: #000000b0;
+        }
+      }
+    
   }
 
   .info-right {
@@ -734,12 +739,19 @@ const FooterWrapper = styled.footer`
       a {
         color: #0000008a;
         font-size: 28px;
-        transition: 100ms ease-in-out;
-
+        transition: 200ms ease-in-out;
       }
 
       a:hover {
-        transform: scale(1.1);
+        transform: scale(1.3);;
+      }
+      
+      .insta:hover {
+        color: #ff2277ff
+      }
+
+      .whatsup:hover {
+        color: #44ff1fff
       }
     }
   }
@@ -929,7 +941,6 @@ export default function SeenCafeMenu() {
                     width="18"
                     height="18"
                     fill="none"
-                    stroke="#a3b79b"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -942,6 +953,7 @@ export default function SeenCafeMenu() {
                   </svg>
                 </p>
                 <p className="rights">© تمامی حقوق برای کافه Ondam محفوظ است.</p>
+                <p className="rights">طراحی و توسعه توسط <a href="https://github.com/younghosein">حسین محمدپور</a></p>
               </div>
               <div className="info-right">
                 <div className="phone-box" aria-label="شماره تماس کافه">
@@ -950,6 +962,7 @@ export default function SeenCafeMenu() {
                 </div>
                 <nav className="social" aria-label="شبکه های اجتماعی کافه">
                   <a
+                    className="insta"
                     href="https://instagram.com/zhivanstory"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -958,6 +971,7 @@ export default function SeenCafeMenu() {
                     <FiInstagram />
                   </a>
                   <a
+                  className="whatsup"
                     href="https://wa.me/09113124145"
                     target="_blank"
                     rel="noopener noreferrer"
