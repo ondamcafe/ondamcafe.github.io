@@ -559,20 +559,109 @@ const ProductCard = styled.article`
 `;
 
 const FooterWrapper = styled.footer`
-  background: #17211e;
-  border-radius: 30px 0 0 30px;
-  padding: 40px 30px 30px 30px;
-  color: #bfc5bc;
-  direction: rtl;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+  .card {
+    position: relative;
+    //box-shadow: 12px 12px 20px -12px rgba(0,0,0,0.75);
+    //z-index: 1;
+    border-radius: 20px 110px 0 0;
+    overflow: hidden;
+  }
+
+  .card__content {
+    background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));
+    z-index: 3; !important
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    filter: blur(15px);
+    opacity: 0.5;
+  }
+
+  .blob-1 {
+    left: -65px;
+    top: -45px;
+    background: #2F5249;
+    background: -webkit-linear-gradient(to bottom, #555879, #898AC4, #748873);
+    background: linear-gradient(to bottom, #333446, #7F8CAA, #B0DB9C);
+    transform: rotate(12deg);
+  }
+
+  .blob-2 {
+    left: -30px;
+    top: 120px;
+    background: #FFFA8D;
+    background: -webkit-linear-gradient(to bottom, #547792, #E9F5BE);
+    background: linear-gradient(to bottom, #9FB3DF, #A0C878);
+    transform: rotate(20deg);
+  }
+
+  .blob-3 {
+    right: -60px;
+    bottom: -10px;
+    background: #854836;
+    background: -webkit-linear-gradient(to bottom, #727D73, #3D3D3D);
+    background: linear-gradient(to bottom, #3A3960, #D8C4B6);
+    transform: rotate(-10deg);
+  }
+
+  .blob-4 {
+    right: -70px;
+    top: 20px;
+    background: #3E5879;
+    background: -webkit-linear-gradient(to bottom right, #E5D9F2, #131010, #9AA6B2);
+    background: linear-gradient(to bottom right, #4B5945, #685752, #7fbbffff);
+    transform: rotate(-25deg);
+  }
+
+  .footer{
+    background: lightgrey;
+    border-radius: 30px 0 0 30px;
+    padding: 40px 30px 30px 30px;
+    color: #ccc;
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    //z-index: -3;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      border-radius: 20px 90px 0 0;
+      padding: 20px 20px 24px 20px;
+  
+      .info-left {
+        max-width: 100%;
+        margin-bottom: 35px;
+        text-align: center;
+  
+        .address {
+          justify-content: center;
+        }
+      }
+  
+      .info-right {
+        justify-content: center;
+      }
+    }
+  }
 
   .info-left {
     max-width: 380px;
+    //z-index:2;
 
     h2 {
-      color: #e0ebd5;
+      color: #111;
       font-weight: 700;
       margin-bottom: 4px;
     }
@@ -584,7 +673,7 @@ const FooterWrapper = styled.footer`
       display: flex;
       gap: 5px;
       align-items: center;
-      color: #a3b79b;
+      color: #222;
 
       svg {
         margin-left: 6px;
@@ -596,9 +685,11 @@ const FooterWrapper = styled.footer`
 
     .rights {
       margin: 24px 0 0 0;
-      font-size: 11px;
+      font-size: 12px;
       opacity: 0.5;
       user-select: none;
+      color: #000000ff;
+      font-weight: 700;
     }
   }
 
@@ -606,9 +697,10 @@ const FooterWrapper = styled.footer`
     display: flex;
     gap: 25px;
     align-items: center;
+    z-index:3;
 
     .phone-box {
-      background: #596c59;
+      background: #0000008a;
       border-radius: 18px;
       color: white;
       padding: 23px 22px;
@@ -619,47 +711,36 @@ const FooterWrapper = styled.footer`
       align-items: center;
       gap: 10px;
       user-select: text;
+      transition: 300ms ease-in-out;
 
       svg {
         font-size: 22px;
       }
+
+      &:hover {
+        transform: scale(1.1);
+        background: #ffffff42;
+        color:#333;
+      }
+      
     }
 
     nav.social {
       display: flex;
       gap: 24px;
+      z-index:3;
+
 
       a {
-        color: #c6c9c3;
+        color: #0000008a;
         font-size: 28px;
-        transition: color 0.4s ease;
+        transition: 100ms ease-in-out;
+
       }
 
       a:hover {
-        color: #a9b396;
+        transform: scale(1.1);
       }
-    }
-  }
-
-  
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    border-radius: 20px 90px 0 0;
-    padding: 20px 20px 24px 20px;
-
-    .info-left {
-      max-width: 100%;
-      margin-bottom: 35px;
-      text-align: center;
-
-      .address {
-        justify-content: center;
-      }
-    }
-
-    .info-right {
-      justify-content: center;
     }
   }
 `;
@@ -832,53 +913,63 @@ export default function SeenCafeMenu() {
 
         {/* Footer */}
         <FooterWrapper role="contentinfo" aria-label="فوتر سایت  کافه Ondam">
-          <div className="info-left">
-            <h2>Ondam Café</h2>
-            <p className="address" aria-label="آدرس کافه">
-              بابل، خیابان گل{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="#a3b79b"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" />
-                <circle cx="12" cy="9" r="2.5" />
-              </svg>
-            </p>
-            <p className="rights">© تمامی حقوق برای کافه Ondam محفوظ است.</p>
-          </div>
-          <div className="info-right">
-            <div className="phone-box" aria-label="شماره تماس کافه">
-              <FiPhone aria-hidden="true" />
-              ۰۹۱۱۳۱۲۴۱۴۵
+          <div class="card">
+            <div class="card__content"></div>
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="blob blob-4"></div>
+            <div className="footer">
+              <div className="info-left">
+                <h2>Ondam Café</h2>
+                <p className="address" aria-label="آدرس کافه">
+                  بابل، خیابان گل{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="#a3b79b"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                </p>
+                <p className="rights">© تمامی حقوق برای کافه Ondam محفوظ است.</p>
+              </div>
+              <div className="info-right">
+                <div className="phone-box" aria-label="شماره تماس کافه">
+                  <FiPhone aria-hidden="true" />
+                  ۰۹۱۱۳۱۲۴۱۴۵
+                </div>
+                <nav className="social" aria-label="شبکه های اجتماعی کافه">
+                  <a
+                    href="https://instagram.com/zhivanstory"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="اینستاگرام کافه Ondam"
+                  >
+                    <FiInstagram />
+                  </a>
+                  <a
+                    href="https://wa.me/09113124145"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="واتساپ کافه Ondam"
+                  >
+                    <FiMessageCircle />
+                  </a>
+                </nav>
+              </div>
             </div>
-            <nav className="social" aria-label="شبکه های اجتماعی کافه">
-              <a
-                href="https://instagram.com/zhivanstory"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="اینستاگرام کافه Ondam"
-              >
-                <FiInstagram />
-              </a>
-              <a
-                href="https://wa.me/09113124145"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="واتساپ کافه Ondam"
-              >
-                <FiMessageCircle />
-              </a>
-            </nav>
           </div>
+          
         </FooterWrapper>
       </Container>
     </>
