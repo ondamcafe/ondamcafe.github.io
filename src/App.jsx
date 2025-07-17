@@ -18,6 +18,7 @@ import icy from "./icons/icy.svg";
 import hot_drink from "./icons/hot-drink.svg";
 import openSVG from "./icons/open.svg";
 import closeSVG from "./icons/close.svg";
+import logo1 from "./icons/logo1.svg";
 
 // ------------- Global Style with RTL and Persian font -----------
 
@@ -116,7 +117,7 @@ const productsData = {
     },
     {
       id: 2,
-      title: "تست چیز بیکن",
+      title: "تست اسکرمبل",
       desc: "نان خمیر ترش، بیکن، تخم مرغ، پنیر، پیتزا قارچ",
       price: "۲۶۵,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
@@ -290,6 +291,10 @@ const Header = styled.header`
     font-size: 11px;
     color: #404040;
     font-weight: 600;
+  }
+  .logo1 {
+    margin-top:-35px;
+    margin-bottom:-20px;
   }
   .search {
     display: flex;
@@ -481,6 +486,7 @@ const ProductCard = styled.article`
       )
       60% 60%/600% 600%;
     filter: opacity(10%) contrast(105%);
+
   }
 
   .card-inner {
@@ -544,7 +550,6 @@ const ProductCard = styled.article`
     img {
       width: 130px;
       height: 130px;
-
       border-radius: 20px;
     }
 
@@ -660,6 +665,11 @@ const FooterWrapper = styled.footer`
     max-width: 380px;
     z-index:3;
 
+    .logo2 {
+      margin-top:-10px;
+      margin-bottom:-30px;
+    }
+
     h2 {
       color: #111;
       font-weight: 700;
@@ -693,6 +703,7 @@ const FooterWrapper = styled.footer`
     
         a {
           color: #000000b0;
+          text-decoration: none;
         }
       }
     
@@ -708,7 +719,8 @@ const FooterWrapper = styled.footer`
       background: #0000008a;
       border-radius: 18px;
       color: white;
-      padding: 23px 22px;
+      padding: 15px;
+      margin-bottom: 15px;
       cursor: default;
       font-weight: 600;
       font-size: 15px;
@@ -743,15 +755,15 @@ const FooterWrapper = styled.footer`
       }
 
       a:hover {
-        transform: scale(1.3);;
+        transform: scale(1.3);
       }
       
       .insta:hover {
-        color: #ff2277ff
+        color: #ff2277ff;
       }
 
       .whatsup:hover {
-        color: #44ff1fff
+        color: #44ff1fff;
       }
     }
   }
@@ -869,10 +881,12 @@ export default function SeenCafeMenu() {
               </div>
             </div>
             <img
-              src="https://seencafebakery.ir/wp-content/uploads/2022/11/seen-dark-logo.svg"
+              src={logo1} 
               alt="Ondam Cafe Logo"
-              className="logo"
+              className="logo1"
               draggable={false}
+              width={100}
+              height={100}
             />
           </div>
         </Header>
@@ -881,10 +895,10 @@ export default function SeenCafeMenu() {
         <SearchBar role="search" aria-label="جستجو در کافه Ondam ">
           <input
             type="search"
-            placeholder="جستجو در کافه Ondam ..."
+            placeholder="جستجو در کافه آن‌دَم ..."
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
-            aria-label="جستجو در کافه Ondam "
+            aria-label="جستجو در کافه آن‌دم "
           />
           <FiSearch aria-hidden="true" />
         </SearchBar>
@@ -933,7 +947,14 @@ export default function SeenCafeMenu() {
             <div class="blob blob-4"></div>
             <div className="footer">
               <div className="info-left">
-                <h2>Ondam Café</h2>
+                <img
+                src={logo1} 
+                alt="Ondam Cafe Logo"
+                className="logo2"
+                draggable={false}
+                width={80}
+                height={80}
+                />
                 <p className="address" aria-label="آدرس کافه">
                   بابل، خیابان گل{" "}
                   <svg
@@ -953,7 +974,7 @@ export default function SeenCafeMenu() {
                   </svg>
                 </p>
                 <p className="rights">© تمامی حقوق برای کافه Ondam محفوظ است.</p>
-                <p className="rights">طراحی و توسعه توسط <a href="https://github.com/younghosein">حسین محمدپور</a></p>
+                <p className="rights">طراحی و توسعه توسط <a href="https://github.com/younghosein" target="_blank" rel="noopener noreferrer">حسین محمدپور</a></p>
               </div>
               <div className="info-right">
                 <div className="phone-box" aria-label="شماره تماس کافه">
