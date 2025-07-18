@@ -19,6 +19,9 @@ import hot_drink from "./icons/hot-drink.svg";
 import openSVG from "./icons/open.svg";
 import closeSVG from "./icons/close.svg";
 import logo1 from "./icons/logo1.svg";
+import lmeal from "./icons/l-meal.svg";
+import meal from "./icons/meal.svg";
+import pizza from "./icons/pizza.svg";
 
 // ------------- Global Style with RTL and Persian font -----------
 
@@ -103,6 +106,21 @@ const categoriesData = [
     title: "شیک و اسموتی",
     icon: <img src={icy} alt="ice-cream icon" width={40} />,
   },
+  {
+    id: "l-meal",
+    title: "پیش غذا",
+    icon: <img src={lmeal} alt="light meal icon" width={40} />,
+  },
+  {
+    id: "meal",
+    title: "غذای اصلی",
+    icon: <img src={meal} alt="meal icon" width={40} />,
+  },
+  {
+    id: "pizza",
+    title: "پیتزا",
+    icon: <img src={pizza} alt="pizza icon" width={50} />,
+  },
 ];
 
 // نمونه محصولات برای چند دسته
@@ -111,15 +129,50 @@ const productsData = {
     {
       id: 1,
       title: "تست آووکادو",
-      desc: "نان خمیر ترش،پوره آووکادو، تخم مرغ آب‌پز",
-      price: "۳۷۵,۰۰۰ تومان",
+      desc: "نان خمیر ترش، پوره آووکادو، تخم مرغ آب‌پز",
+      price: "۰۰۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/avocado-toast.jpg",
     },
     {
       id: 2,
       title: "تست اسکرمبل",
-      desc: "نان خمیر ترش، بیکن، تخم مرغ، پنیر، پیتزا قارچ",
-      price: "۲۶۵,۰۰۰ تومان",
+      desc: " نان خمیر ترش، فراورده تخم مرغ و شیر ",
+      price: "۰۰۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 3,
+      title: "اِگ کروسان بیکن",
+      desc: "نان کروسان، تخم مرغ، بیکن",
+      price: "۰۰۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 4,
+      title: "اِگ کروسان آووکادو",
+      desc: "نان کروسان، تخم مرغ، آووکادو",
+      price: "۰۰۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 5,
+      title: "فرنچ تست",
+      desc: "نان خمیر ترش، سس بری، خامه",
+      price: "۰۰۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 6,
+      title: "بشقاب صبحانه",
+      desc: "املت، قارچ، هات داگ",
+      price: "۰۰۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 7,
+      title: "بشقاب انگلیسی",
+      desc: "تخم مرغ، لوبیا، هات داگ، بیکن، سیب زمینی، قارچ",
+      price: "۰۰۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
   ],
@@ -413,7 +466,7 @@ const CategoryItem = styled.button`
 
   &:hover {
     //background-color: white;
-    transform: scale(1.05);
+    transform: scale(1.1);
     //box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
     svg {
       color: #1b1b1bff;
@@ -570,6 +623,7 @@ const FooterWrapper = styled.footer`
     //z-index: 1;
     border-radius: 20px 110px 0 0;
     overflow: hidden;
+
   }
 
   .card__content {
@@ -582,6 +636,7 @@ const FooterWrapper = styled.footer`
     top: 0;
     width: 100%;
     height: 100%;
+
   }
 
   .blob {
@@ -639,6 +694,9 @@ const FooterWrapper = styled.footer`
     justify-content: space-between;
     font-size: 14px;
     //z-index: -3;
+    //box-shadow:  0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset,rgba(0, 0, 0, 0.35) 6px ;
+
+
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -664,6 +722,7 @@ const FooterWrapper = styled.footer`
   .info-left {
     max-width: 380px;
     z-index:3;
+
 
     .logo2 {
       margin-top:-10px;
