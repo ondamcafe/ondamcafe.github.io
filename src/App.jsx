@@ -1,3 +1,6 @@
+//! DEVELOPED AND DESIGNED BY : HTTPS://GITHUB.COM/YOUNGHOSEIN
+
+//---------import statics-----------
 import React, { useState, useMemo, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import {
@@ -23,8 +26,7 @@ import lmeal from "./icons/l-meal.svg";
 import meal from "./icons/meal.svg";
 import pizza from "./icons/pizza.svg";
 
-// ------------- Global Style with RTL and Persian font -----------
-
+//---------global styles-----------
 const GlobalStyle = createGlobalStyle`
   @import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
   * {
@@ -47,14 +49,12 @@ const GlobalStyle = createGlobalStyle`
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #8a9a73;
+    background: #575757ff;
     border-radius: 4px;
   }
 `;
 
-// ------------- Sample Data ---------------
-
-// دسته بندی ها مطابق تصاویر + آیکون SVG مشابه
+//---------category dictionaries-----------
 const categoriesData = [
   {
     id: "breakfast",
@@ -123,7 +123,7 @@ const categoriesData = [
   },
 ];
 
-// نمونه محصولات برای چند دسته
+//---------products dictionary-----------
 const productsData = {
   breakfast: [
     {
@@ -219,8 +219,7 @@ const productsData = {
   ],
 };
 
-// ----------- Styled Components ----------
-
+//---------component styles-----------
 const Container = styled.div`
   max-width: 1250px;
   margin: auto;
@@ -230,26 +229,25 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+//---------header styles-----------
 const Header = styled.header`
   .card {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px  5px  5px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #ccc;
-  padding: 35px 25px;
-  position: relative;
-  border: none;
-  color: #fff;
-  transition: 0.5s;
-  transition-property: box-shadow;
-  background: lightgrey;
-  box-shadow:  0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
-  z-index: 0;
-  overflow: hidden;
-  }
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px  5px  5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ccc;
+    padding: 35px 25px;
+    position: relative;
+    color: #fff;
+    transition: 0.5s;
+    background: lightgrey;
+    box-shadow:  0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset;
+    z-index: 0;
+    overflow: hidden;
+    }
 
   .card__content {
     background: linear-gradient(rgba(143, 143, 143, 0.36), rgba(150, 150, 150, 0.1));
@@ -309,7 +307,8 @@ const Header = styled.header`
   }
 
   .del {
-    position: relative;  margin: 0;
+    position: relative; 
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,20 +329,6 @@ const Header = styled.header`
     font-weight: 600;
     font-size: 14px;
     color:#444;
-    .img1 {
-      font-size: 18px;
-      font-weight: 600;
-      width: 60px;
-    }
-  }
-  img.logo {
-    width: 135px;
-    height: 45px;
-    object-fit: contain;
-    user-select: none;
-    font-size: 11px;
-    color: #404040;
-    font-weight: 600;
   }
   .logo1 {
     margin-top:-35px;
@@ -366,7 +351,6 @@ const Header = styled.header`
     outline: none;
     font-size: 14px;
     color: #404040;
-    background
   }
 
   @media (max-width: 768px) {
@@ -441,16 +425,17 @@ const CategoryItem = styled.button`
     props.selected ? "#ecececff" : "linear-gradient(145deg, #d6d6d6, #ffffff)"};
   color: ${(props) => (props.selected ? "black" : "#333")};
   border-radius: 70px 5px 40px 20px;
-  padding: 12px 18px;
+  padding: 14px 14px 12px 10px;
   margin-right: 9px;
   margin-left: -8px;
-  min-width: 110px;
+  min-width: 78px;
+  min-height: 155px;
   font-weight: 600;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 12px;
+  font-size: 12.5px;
   cursor: pointer;
   box-shadow: inset 5px 5px 10px #c7c7c7, inset -5px -5px 10px #f9f9f9;
   user-select: none;
@@ -465,9 +450,7 @@ const CategoryItem = styled.button`
   transition: 400ms ease-in-out;
 
   &:hover {
-    //background-color: white;
     transform: scale(1.1);
-    //box-shadow: 13px 13px 100px #969696, -13px -13px 100px #ffffff;
     svg {
       color: #1b1b1bff;
     }
@@ -504,7 +487,7 @@ const CategoryTitle = styled.h2`
 
 const ProductListGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 24px;
   margin-bottom: 50px;
 
@@ -522,7 +505,7 @@ const ProductCard = styled.article`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   display: grid;
-  gap: 16px;
+  gap: 36px;
   align-items: center;
   position: relative;
   padding: 9px;
@@ -539,7 +522,6 @@ const ProductCard = styled.article`
       )
       60% 60%/600% 600%;
     filter: opacity(10%) contrast(105%);
-
   }
 
   .card-inner {
@@ -551,6 +533,7 @@ const ProductCard = styled.article`
     background-color: var(--contrast);
     border-radius: 30px;
     direction: rtl;
+
   }
 
   img {
@@ -571,7 +554,7 @@ const ProductCard = styled.article`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
     margin-right: 16px;
     margin-top: 16px;
 
@@ -581,13 +564,14 @@ const ProductCard = styled.article`
       font-size: 18px;
       color: #444;
       line-height: 1.1;
+      
     }
     p.desc {
       margin: 0;
       color: #666;
       font-size: 14px;
       line-height: 1.3;
-      min-height: 40px;
+      min-height: auto;
       overflow-wrap: break-word;
     }
     p.price {
@@ -619,11 +603,8 @@ const ProductCard = styled.article`
 const FooterWrapper = styled.footer`
   .card {
     position: relative;
-    //box-shadow: 12px 12px 20px -12px rgba(0,0,0,0.75);
-    //z-index: 1;
     border-radius: 20px 110px 0 0;
     overflow: hidden;
-
   }
 
   .card__content {
@@ -636,7 +617,6 @@ const FooterWrapper = styled.footer`
     top: 0;
     width: 100%;
     height: 100%;
-
   }
 
   .blob {
@@ -693,10 +673,6 @@ const FooterWrapper = styled.footer`
     display: flex;
     justify-content: space-between;
     font-size: 14px;
-    //z-index: -3;
-    //box-shadow:  0px 50px 100px -20px, rgba(0, 0, 0, 0.44) 0px 30px 60px -30px, rgba(0, 0, 0, 0.35) 0px -2px 6px 0px inset,rgba(0, 0, 0, 0.35) 6px ;
-
-
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -883,7 +859,7 @@ function ProductCardComp({ product }) {
 
 //  --------- Main Component --------
 
-export default function SeenCafeMenu() {
+export default function OndamCafeMenu() {
   const [selectedCategory, setSelectedCategory] = useState(
     categoriesData[0].id
   );
