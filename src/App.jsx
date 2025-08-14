@@ -377,7 +377,7 @@ const SearchBar = styled.div`
   input {
     width: 100%;
     border-radius: 14px;
-    font-size: 15px;
+    font-size: 12px;
     font-family: "Vazir", Tahoma, sans-serif;
 
     border: none;
@@ -461,10 +461,10 @@ const CategoryItem = styled.button`
   }
 
   @media (max-width: 768px) {
-    min-width: 78px;
+    min-width: 75px;
     padding: 14px 14px 12px 10px;
 
-    font-size: 12.5px;
+    font-size: 11.5px;
     svg {
       font-size: 26px;
       margin-bottom: 8px;
@@ -473,12 +473,12 @@ const CategoryItem = styled.button`
 `;
 
 const CategoryTitle = styled.h2`
-  font-weight: 600;
+  font-weight: 900;
   margin: 32px 0 20px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
+  gap: 7px;
+  font-size: 15px;
 
   svg {
     color: rgb(44, 44, 44);
@@ -561,7 +561,7 @@ const ProductCard = styled.article`
     h3 {
       margin: 0;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       color: #444;
       line-height: 1.1;
       
@@ -569,7 +569,7 @@ const ProductCard = styled.article`
     p.desc {
       margin: 0;
       color: #666;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 1.3;
       min-height: auto;
       overflow-wrap: break-word;
@@ -578,7 +578,7 @@ const ProductCard = styled.article`
       margin-top: 50px;
       font-weight: 700;
       color: #555;
-      font-size: 15px;
+      font-size: 14px;
       align-self: flex-start;
     }
   }
@@ -714,22 +714,22 @@ const FooterWrapper = styled.footer`
     .address {
       opacity: 0.9;
       margin: 8px 0 30px 0;
-      font-size: 13px;
+      font-size: 11px;
       display: flex;
       gap: 5px;
       align-items: center;
       color: #222;
 
       svg {
-        margin-left: 6px;
-        min-width: 18px;
-        min-height: 18px;
+        margin-left: 4px;
+        min-width: 12px;
+        min-height: 12px;
         stroke: currentColor;
       }
     }
 
     .rights {
-      margin: 0 0 0 -24px;
+      margin: 0;
       font-size: 12px;
       opacity: 0.5;
       user-select: none;
@@ -764,6 +764,8 @@ const FooterWrapper = styled.footer`
       gap: 10px;
       user-select: text;
       transition: 300ms ease-in-out;
+      text-decoration: none;
+
 
       svg {
         font-size: 22px;
@@ -991,7 +993,7 @@ export default function OndamCafeMenu() {
                 height={80}
                 />
                 <p className="address" aria-label="آدرس کافه">
-                  بابل، خیابان گل{" "}
+                  بابل، توحید ۵۱، خیابان وحدت، نبش وحدت ۱۲{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -1012,14 +1014,14 @@ export default function OndamCafeMenu() {
                 <p className="rights">طراحی و توسعه توسط <a href="https://github.com/younghosein" target="_blank" rel="noopener noreferrer">حسین محمدپور</a></p>
               </div>
               <div className="info-right">
-                <div className="phone-box" aria-label="شماره تماس کافه">
+                <a className="phone-box" aria-label="شماره تماس کافه" href="sms:+989113124145" rel="noopener noreferrer">
                   <FiPhone aria-hidden="true" />
                   ۰۹۱۱۳۱۲۴۱۴۵
-                </div>
+                </a>
                 <nav className="social" aria-label="شبکه های اجتماعی کافه">
                   <a
                     className="insta"
-                    href="https://instagram.com/zhivanstory"
+                    href="https://instagram.com/ondam_cafe"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="اینستاگرام کافه Ondam"
@@ -1028,7 +1030,7 @@ export default function OndamCafeMenu() {
                   </a>
                   <a
                   className="whatsup"
-                    href="https://wa.me/09113124145"
+                    href="https://wa.me/+989021378165"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="واتساپ کافه Ondam"
