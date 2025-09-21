@@ -130,93 +130,876 @@ const productsData = {
       id: 1,
       title: "تست آووکادو",
       desc: "نان خمیر ترش، پوره آووکادو، تخم مرغ آب‌پز",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۲۱۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/avocado-toast.jpg",
     },
     {
       id: 2,
       title: "تست اسکرمبل",
       desc: " نان خمیر ترش، فراورده تخم مرغ و شیر ",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۱۷۵,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
       id: 3,
       title: "اِگ کروسان بیکن",
       desc: "نان کروسان، تخم مرغ، بیکن",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۲۲۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
       id: 4,
       title: "اِگ کروسان آووکادو",
       desc: "نان کروسان، تخم مرغ، آووکادو",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۱۷۵,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
       id: 5,
       title: "فرنچ تست",
       desc: "نان خمیر ترش، سس بری، خامه",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۱۷۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
       id: 6,
-      title: "بشقاب صبحانه",
-      desc: "املت، قارچ، هات داگ",
-      price: "۰۰۰,۰۰۰ تومان",
+      title: "املت ایرانی",
+      desc: "",
+      price: "۱۵۵,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
       id: 7,
       title: "بشقاب انگلیسی",
       desc: "تخم مرغ، لوبیا، هات داگ، بیکن، سیب زمینی، قارچ",
-      price: "۰۰۰,۰۰۰ تومان",
+      price: "۲۸۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 8,
+      title: "تست نیمرو آن دم",
+      desc: "",
+      price: "۲۶۵,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 9,
+      title: "تست کره بادام زمینی و عسل",
+      desc: "",
+      price: "۱۶۵,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 10,
+      title: "تست نوتلا بستنی",
+      desc: "",
+      price: "۲۱۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+  ],
+  pastry: [
+    {
+      id: 1,
+      title: "کروسان کره ای",
+      desc: "",
+      price: "۱۱۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 2,
+      title: "کروسان موز و نوتلا",
+      desc: "",
+      price: "۱۶۵,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 3,
+      title: "کروسان کره بادام زمینی",
+      desc: "",
+      price: "۱۴۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 4,
+      title: "کیک روز",
+      desc: "",
+      price: "۹۵,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 5,
+      title: "سن سباستین",
+      desc: "",
+      price: "۱۴۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 6,
+      title: "کیک بستنی",
+      desc: "",
+      price: "۱۶۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 7,
+      title: "کوکی",
+      desc: "",
+      price: "۹۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 8,
+      title: "وافل نوتلا",
+      desc: "وافل ساده همراه با نوتلا، میوه و بستنی",
+      price: "۲۱۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 9,
+      title: "وافل کره بادام زمینی",
+      desc: "وافل ساده همراه با کره بادام زمینی میوه و عسل",
+      price: "۱۹۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 10,
+      title: "وافل لوتوس",
+      desc: "وافل ساده همراه با کرم لوتوس و بستنی",
+      price: "۱۹۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
   ],
   "hot-espresso": [
     {
       id: 1,
-      title: "قهوه فرانسه",
-      desc: "عصاره گیری به روش فرانسه",
-      price: "۲۲۰,۰۰۰ تومان",
-      img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+      title: "اسپرسو ترکیب ۸۰/۲۰",
+      desc: (
+        <>
+          از برند <a href="https://onandonroastery.com/product/blend-80-arabica-1kg/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
+        </>
+      ),
+      price: "۱۰۷,۰۰۰ تومان",
+      img: " ",
     },
     {
       id: 2,
-      title: "بدون کافئین",
-      desc: "گزینه بدون کافئین",
-      price: "۲۳۰,۰۰۰ تومان",
+      title: "اسپرسو ترکیب ۵۰/۵۰ ",
+      desc: (
+        <>
+          از برند <a href="https://onandonroastery.com/product/%d9%82%d9%87%d9%88%d9%87-%d8%aa%d8%b1%da%a9%db%8c%d8%a8%db%8c-50%d9%aa-%d8%b9%d8%b1%d8%a8%db%8c%da%a9%d8%a7/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
+        </>
+      ),
+      price: "۹۷,۰۰۰ تومان",
+      img: " ",
+    },
+        {
+      id: 3,
+      title: "آمریکانو ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با آب داغ",
+      price: "۱۱۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 4,
+      title: "آمریکانو ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با آب داغ",
+      price: "۱۰۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 5,
+      title: "کورتادو ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۶۰ سی سی شیر گرم شده",
+      price: "۱۲۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 6,
+      title: "کورتادو ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۶۰ سی سی شیر گرم شده",
+      price: "۱۱۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 7,
+      title: "کاپوچینو ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۱۵۰ سی سی شیر گرم شده",
+      price: "۱۳۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 8,
+      title: "کاپوچینو ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۱۵۰ سی سی شیر گرم شده",
+      price: "۱۲۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 9,
+      title: "لاته ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده",
+      price: "۱۳۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 10,
+      title: "لاته ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده",
+      price: "۱۲۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 11,
+      title: "موکا ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و سیروپ شکلات",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 12,
+      title: "موکا ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و سیروپ شکلات",
+      price: "۱۳۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 13,
+      title: "لاته کارامل ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و سیروپ کارامل",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 14,
+      title: "لاته کارامل ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و سیروپ کارامل",
+      price: "۱۳۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 15,
+      title: "لاته لوتوس ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و کرم لوتوس",
+      price: "۱۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 16,
+      title: "لاته لوتوس ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و کرم لوتوس",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 17,
+      title: "لاته پسته ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و کرم پسته",
+      price: "۱۶۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 18,
+      title: "لاته پسته ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده و کرم پسته",
+      price: "۱۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 19,
+      title: "آیتم سیروپ اضافه",
+      desc: "شیر عسلی، فندوق، نارگیل، عسل، وانیل",
+      price: "۵۰,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=No_Image",
     },
   ],
   "iced-espresso": [
-    {
+       {
       id: 1,
-      title: "آیس چاکلت دوپاتی",
-      desc: "همجورای شکلات سرد و پوره توت فرنگی",
-      price: "۱۲۰,۰۰۰ تومان",
-      img: "https://via.placeholder.com/120x120?text=Ice_Chocolate",
+      title: "آیس اسپرسو ترکیب ۸۰/۲۰",
+      desc: (
+        <>
+          اسپرسو همراه با یخ از برند <a href="https://onandonroastery.com/product/blend-80-arabica-1kg/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
+        </>
+      ),
+      price: "۱۱۷,۰۰۰ تومان",
+      img: " ",
     },
     {
       id: 2,
-      title: "آیس دبی چاکلت",
-      desc: "همجورای شکلات سرد و کرم پسته",
-      price: "۱۳۰,۰۰۰ تومان",
-      img: "https://via.placeholder.com/120x120?text=Ice_Dubai_Chocolate",
+      title: "آیس اسپرسو ترکیب ۵۰/۵۰ ",
+      desc: (
+        <>
+          اسپرسو همراه با یخ از برند <a href="https://onandonroastery.com/product/blend-80-arabica-1kg/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
+        </>
+      ),
+      price: "۱۰۷,۰۰۰ تومان",
+      img: " ",
+    },
+        {
+      id: 3,
+      title: "آیس آمریکانو ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با آب سرد و یخ",
+      price: "۱۲۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 4,
+      title: "آیس آمریکانو ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با آب سرد و یخ",
+      price: "۱۱۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 5,
+      title: "آفوگاتو ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با بستنی وانیل",
+      price: "۱۳۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 6,
+      title: "آفوگاتو ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با بستنی وانیل",
+      price: "۱۲۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 7,
+      title: "آفوگاتو پسته ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با بستنی وانیل و کرم پسته",
+      price: "۱۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 8,
+      title: "آفوگاتو پسته ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با بستنی وانیل و کرم پسته",
+      price: "۱۷۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 9,
+      title: "آفوگاتو نوتلا ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با بستنی وانیل و نوتلا",
+      price: "۱۸۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 10,
+      title: "آفوگاتو نوتلا ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با بستنی وانیل و نوتلا",
+      price: "۱۷۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+
+    {
+      id: 11,
+      title: "آیس لاته ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با شیر سرد و یخ",
+      price: "۱۴۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 12,
+      title: "آیس لاته ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با شیر سرد و یخ",
+      price: "۱۳۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 13,
+      title: " آیس موکا ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با شیر سرد و سیروپ شکلات",
+      price: "۱۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 14,
+      title: "آیس موکا ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با شیر سرد و سیروپ شکلات",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 15,
+      title: "آیس لاته کارامل ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با شیر سرد و سیروپ کارامل",
+      price: "۱۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 16,
+      title: "آیس لاته کارامل ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با شیر سرد و سیروپ کارامل",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+        {
+      id: 15,
+      title: "آیس لاته لوتوس ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با شیر سرد و کرم لوتوس",
+      price: "۱۶۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 16,
+      title: "آیس لاته لوتوس ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با شیر سرد و کرم لوتوس",
+      price: "۱۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 17,
+      title: "آیس لاته پسته ترکیب ۸۰/۲۰",
+      desc: "اسپرسو همراه با شیر سرد و کرم پسته",
+      price: "۱۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+        {
+      id: 18,
+      title: "آیس لاته پسته ترکیب ۵۰/۵۰",
+      desc: "اسپرسو همراه با شیر سرد و کرم پسته",
+      price: "۱۷۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
+    },
+    {
+      id: 19,
+      title: "آیتم سیروپ اضافه",
+      desc: "شیر عسلی، فندوق، نارگیل، عسل، وانیل",
+      price: "۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=No_Image",
     },
   ],
   tea: [
     {
       id: 1,
-      title: "دمنوش زعفران",
-      desc: "دمنوش گرم با عطر زعفران",
+      title: "چای سیاه گیلان",
+      desc: "چای معطر لاهیجان",
+      price: "۶۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "چای زعفران",
+      desc: "چای معطر لاهیجان همراه با زعفران سرد دم",
+      price: "۸۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "چای هل و دارچین",
+      desc: "",
+      price: "۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "چای انگلیسی",
+      desc: "چای معطر لاهیجان همراه با عسل و شیر گرم شده",
+      price: "۱۱۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 5,
+      title: "چای سبز",
+      desc: "",
+      price: "۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 6,
+      title: "چای ترش",
+      desc: "",
+      price: "۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 7,
+      title: "چای لیمو عسل",
+      desc: "چای معطر لاهیجان همراه با عسل و لیمو",
+      price: "۱۲۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 8,
+      title: "دمنوش آرامش",
+      desc: "آب داغ همراه با گل گاوزبان و لیمو و عسل",
+      price: "۱۱۷,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 9,
+      title: "دمنوش توت وحشی",
+      desc: "چای ترش همراه با توت فرنگی و توت وحشی",
+      price: "۱۱۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 10,
+      title: "دمنوش بهار",
+      desc: "آب داغ همراه با بهار نارنج و گل محمدی",
       price: "۹۵,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
     },
+    {
+      id: 11,
+      title: "دمنوش میوه ای",
+      desc: "آب داغ همراه با میوه خشک و عسل",
+      price: "۱۱۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
   ],
+  "drip-coffee": [
+    {
+      id: 1,
+      title: "قهوه ترک",
+      desc: "",
+      price: "۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    /*{
+      id: 2,
+      title: "وی ۶۰",
+      desc: "",
+      price: "۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "سایفون",
+      desc: "",
+      price: "۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },*/
+  ],
+  "iced-matcha": [
+    {
+      id: 1,
+      title: "آیس ماچا لاته",
+      desc: "ماچا همراه با شیر سرد و یخ",
+      price: "۱۴۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "آیس منگو ماچا لاته",
+      desc: "آیس ماچا لاته همراه با انبه مادل شده",
+      price: "۱۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "آیس بری ماچا لاته",
+      desc: "آیس ماچا لاته همراه با توت فرنگی و شاتوت مادل شده",
+      price: "۱۸۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "آیس کوکو ماچا لاته",
+      desc: "آیس ماچا لاته همراه با شیر نارگیل",
+      price: "۱۷۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+  ],
+  "hot-drinks": [
+    {
+      id: 1,
+      title: "هات چاکلت",
+      desc: "",
+      price: "۱۰۲,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "کرانچ",
+      desc: "راستش من فقط یه برنامه نویس سادم، نمیدونم ترکیباتش چیه :)",
+      price: "۱۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "شیر کاکائو",
+      desc: "",
+      price: "۹۸,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "ماسالا",
+      desc: "",
+      price: "۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 5,
+      title: "شیر نسکافه",
+      desc: "",
+      price: "۱۲۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 6,
+      title: "شیر عسل دارچین",
+      desc: "",
+      price: "۱۲۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 7,
+      title: "هات نوتلا",
+      desc: "",
+      price: "۱۳۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 1,
+      title: "هات لوتوس",
+      desc: "",
+      price: "۱۲۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+  ],
+  "cold-drinks": [
+    {
+      id: 1,
+      title: "لیموناد",
+      desc: "عصاره لیمو همراه با سیروپ شکر و سودا",
+      price: "۱۱۵,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 2,
+      title: "لیموناد بری",
+      desc: "عصاره لیمو همراه با سیروپ شکر، توت فرنگی و سودا",
+      price: "۱۳۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 3,
+      title: "موهیتو",
+      desc: "عصاره لیمو همراه با سیروپ شکر، نعنا و سودا",
+      price: "۱۲۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+    {
+      id: 4,
+      title: "شربت بهار",
+      desc: "",
+      price: "۱۱۰,۰۰۰ تومان",
+      img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
+    },
+  ],
+  icy: [
+    {
+      id: 1,
+      title: "اسموتی هندوانه",
+      desc: "",
+      price: "۱۲۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "اسموتی طالبی",
+      desc: "",
+      price: "۱۲۳,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "اسموتی انبه",
+      desc: "",
+      price: "۱۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "شیک وانیل",
+      desc: "",
+      price: "۱۴۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 5,
+      title: "شیک شکلات",
+      desc: "",
+      price: "۱۶۳,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 6,
+      title: "شیک نوتلا",
+      desc: "",
+      price: "۱۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 7,
+      title: "شیک لوتوس",
+      desc: "",
+      price: "۱۸۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 8,
+      title: "شیک کوکی",
+      desc: "",
+      price: "۱۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 9,
+      title: "شیک نسکافه",
+      desc: "",
+      price: "۱۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 10,
+      title: "شیک اسپرسو",
+      desc: "",
+      price: "۱۸۸,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 11,
+      title: "شیک پسته",
+      desc: "",
+      price: "۲۱۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 12,
+      title: "هزل نات",
+      desc: "بستنی وانیل همراه با شکلات و فندق",
+      price: "۱۷۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+  ],
+  "l-meal": [
+    {
+      id: 1,
+      title: "فرایز",
+      desc: "",
+      price: "۱۹۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "بیکن فرایز",
+      desc: "",
+      price: "۲۸۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "فشن فرایز",
+      desc: "",
+      price: "۲۷۸,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "سزار گریل",
+      desc: "سالاد سزار همراه با مرغ گریل",
+      price: "۳۱۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 5,
+      title: "سزار سوخاری",
+      desc: "سالاد سزار همراه با مرغ سوخاری",
+      price: "۳۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 6,
+      title: "پاپ کرن سوخاری",
+      desc: "",
+      price: "۲۲۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 7,
+      title: "آیتم سس اضافه",
+      desc: "چیلی، قارچ، چدار، پستو، زرشک",
+      price: "۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+  ],
+  meal: [
+    {
+      id: 1,
+      title: "پنینی مرغ و پستو",
+      desc: "",
+      price: "۲۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 2,
+      title: "پنینی مرغ و زرشک",
+      desc: "",
+      price: "۳۲۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 3,
+      title: "زینگر",
+      desc: "",
+      price: "۲۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 4,
+      title: "هات داگ",
+      desc: "",
+      price: "۲۵۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 5,
+      title: "برگر کلاسیک",
+      desc: "",
+      price: "۳۲۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 6,
+      title: "فشن برگر",
+      desc: "",
+      price: "۳۵۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 7,
+      title: "برث برگر",
+      desc: "",
+      price: "۳۶۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 8,
+      title: "پاستا چیکن آلفردو",
+      desc: "",
+      price: "۳۳۰,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 9,
+      title: "پاستا آلفردو سوخاری",
+      desc: "",
+      price: "۳۳۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+    {
+      id: 10,
+      title: "پاستا پستو",
+      desc: "",
+      price: "۲۹۵,۰۰۰ تومان",
+      img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
+    },
+  ],
+  pizza: [],
 };
 
 //---------component styles-----------
@@ -490,7 +1273,6 @@ const ProductListGrid = styled.div`
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 24px;
   margin-bottom: 50px;
-
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -516,6 +1298,7 @@ const ProductCard = styled.article`
     position: absolute;
     inset: 0;
     pointer-events: none;
+    border-radius: 25px;
     background: repeating-conic-gradient(
         var(--bg) 0.0000001%,
         var(--grey) 0.000104%
@@ -559,7 +1342,7 @@ const ProductCard = styled.article`
     margin-top: 16px;
 
     h3 {
-      margin: 0;
+      margin-top: 2;
       font-weight: 700;
       font-size: 16px;
       color: #444;
@@ -567,18 +1350,24 @@ const ProductCard = styled.article`
       
     }
     p.desc {
-      margin: 0;
+      margin-bottom: 2;
       color: #666;
       font-size: 12px;
-      line-height: 1.3;
+      line-height: 1.8;
       min-height: auto;
       overflow-wrap: break-word;
+      
+      a{
+        text-decoration: none;
+        font-weight: bold;
+        color: #666;
+      }
     }
     p.price {
-      margin-top: 50px;
+      margin-top: 10px;
       font-weight: 700;
       color: #555;
-      font-size: 14px;
+      font-size: 16px;
       align-self: flex-start;
     }
   }
@@ -966,7 +1755,7 @@ export default function OndamCafeMenu() {
                 color: "#666",
               }}
             >
-              محصولی یافت نشد!
+              بزودی :)
             </p>
           )}
           {filteredProducts.map((product) => (

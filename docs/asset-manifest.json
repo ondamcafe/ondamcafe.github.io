@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.127a0549.js",
+    "static/media/meal.svg": "/static/media/meal.2b87886bf73a795baedb172c284cf6d4.svg",
+    "static/media/logo1.svg": "/static/media/logo1.75ec3c58fb8643c2f9e670b6e783c028.svg",
+    "static/media/tea.svg": "/static/media/tea.f843a5994d2468674b5e184ed8bc5c4a.svg",
+    "static/media/matcha.svg": "/static/media/matcha.6a2ec72cd05b6a60ae3201ee881bb85e.svg",
+    "static/media/pizza.svg": "/static/media/pizza.a5576c56c6db47ac4c59253e7a802fe6.svg",
+    "static/media/icy.svg": "/static/media/icy.22adb332fca0637e29319f44a7693fee.svg",
+    "static/media/close.svg": "/static/media/close.78496eaca12258bdf29f4e8df7d42f08.svg",
+    "static/media/open.svg": "/static/media/open.705c6cbe9cedd7d4469f66872445f18f.svg",
+    "static/media/brewing.svg": "/static/media/brewing.56cce1102eb08048888f81110d1e5d29.svg",
+    "static/media/cocktail.svg": "/static/media/cocktail.2d28c983e2592a395de11f1163f8360a.svg",
+    "static/media/l-meal.svg": "/static/media/l-meal.04323a8caece4eba151e82f9007d998a.svg",
+    "static/media/hot-drink.svg": "/static/media/hot-drink.dacbf263da23e1a83dec502a5eac2b9c.svg",
+    "static/media/croissant.svg": "/static/media/croissant.69f0cee493e54c753a3eff6938afb213.svg",
+    "static/media/iced_coffee.svg": "/static/media/iced_coffee.e57791172adc8b03e79c847a0c7dbe74.svg",
+    "static/media/h-coffee.svg": "/static/media/h-coffee.2f48a2d8de69236df9d478e3cb168491.svg",
+    "static/media/breakfast1.svg": "/static/media/breakfast1.6111c52261868e0bf7477c7d47246f7a.svg",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.127a0549.js.map": "/static/js/main.127a0549.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.127a0549.js"
+  ]
+}
