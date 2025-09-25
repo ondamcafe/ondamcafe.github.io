@@ -223,7 +223,7 @@ const productsData = {
       id: 4,
       title: "کیک روز",
       desc: "",
-      price: "۹۵,۰۰۰ تومان",
+      price: "۱۰۵,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
@@ -244,7 +244,7 @@ const productsData = {
       id: 7,
       title: "کوکی",
       desc: "",
-      price: "۹۰,۰۰۰ تومان",
+      price: "۸۰,۰۰۰ تومان",
       img: "https://cdn.sallocoffee.com/cheese-bacon-toast.jpg",
     },
     {
