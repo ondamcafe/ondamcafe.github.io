@@ -299,7 +299,7 @@ const productsData = {
           از برند <a href="https://onandonroastery.com/product/blend-80-arabica-1kg/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
         </>
       ),
-      price: "۱۳۰,۰۰۰ تومان",
+      price: "۱۲۰,۰۰۰ تومان",
       img: " ",
     },
     {
@@ -317,7 +317,7 @@ const productsData = {
       id: 3,
       title: "آمریکانو ترکیب ۸۰/۲۰",
       desc: "اسپرسو همراه با آب داغ",
-      price: "۱۳۵,۰۰۰ تومان",
+      price: "۱۲۵,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=No_Image",
     },
     {
@@ -359,7 +359,7 @@ const productsData = {
       id: 9,
       title: "لاته ترکیب ۸۰/۲۰",
       desc: "اسپرسو همراه با ۲۲۰ سی سی شیر گرم شده",
-      price: "۱۳۵,۰۰۰ تومان",
+      price: "۱۴۵,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=No_Image",
     },
     {
@@ -442,7 +442,7 @@ const productsData = {
           اسپرسو همراه با یخ از برند <a href="https://onandonroastery.com/product/blend-80-arabica-1kg/" target="_blank" rel="noopener noreferrer">آن‌اند‌آن</a>
         </>
       ),
-      price: "۱۳۵,۰۰۰ تومان",
+      price: "۱۲۵,۰۰۰ تومان",
       img: " ",
     },
     {
@@ -460,7 +460,7 @@ const productsData = {
       id: 3,
       title: "آیس آمریکانو ترکیب ۸۰/۲۰",
       desc: "اسپرسو همراه با آب سرد و یخ",
-      price: "۱۴۰,۰۰۰ تومان",
+      price: "۱۳۵,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=No_Image",
     },
     {
@@ -517,7 +517,7 @@ const productsData = {
       id: 11,
       title: "آیس لاته ترکیب ۸۰/۲۰",
       desc: "اسپرسو همراه با شیر سرد و یخ",
-      price: "۱۴۵,۰۰۰ تومان",
+      price: "۱۵۰,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=No_Image",
     },
     {
