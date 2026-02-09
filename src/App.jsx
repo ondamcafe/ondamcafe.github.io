@@ -266,22 +266,14 @@ const productsData = {
     {
       id: 1,
       title: "اسپرسو ۱۰۰ عربیکا",
-      desc: (
-        <>
-          از برند <a href="https://lemm.coffee/shop/%D9%82%D9%87%D9%88%D9%87/P84-%D9%82%D9%87%D9%88%D9%87-100-%D8%B9%D8%B1%D8%A8%DB%8C%DA%A9%D8%A7.html#%D9%86%D9%88%D8%B9-%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8-8-62" target="_blank" rel="noopener noreferrer">لم</a>
-        </>
-      ),
+      desc: "",
       price: "۱۴۰,۰۰۰ تومان",
       img: " ",
     },
     {
       id: 2,
       title: "اسپرسو ترکیب ۵۰/۵۰ ",
-      desc: (
-        <>
-          از برند <a href="https://lemm.coffee/shop/%D9%82%D9%87%D9%88%D9%87/P80-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D9%82%D9%87%D9%88%D9%87-50-%D8%B9%D8%B1%D8%A8%DB%8C%DA%A9%D8%A7.html#%D9%86%D9%88%D8%B9-%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8-8-62" target="_blank" rel="noopener noreferrer">لم</a>
-        </>
-      ),
+      desc: "",
       price: "۱۱۵,۰۰۰ تومان",
       img: " ",
     },
@@ -409,22 +401,14 @@ const productsData = {
       {
       id: 1,
       title: "آیس اسپرسو ۱۰۰ عربیکا",
-      desc: (
-        <>
-          از برند <a href="https://lemm.coffee/shop/%D9%82%D9%87%D9%88%D9%87/P84-%D9%82%D9%87%D9%88%D9%87-100-%D8%B9%D8%B1%D8%A8%DB%8C%DA%A9%D8%A7.html#%D9%86%D9%88%D8%B9-%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8-8-62" target="_blank" rel="noopener noreferrer">لم</a>
-        </>
-      ),
+      desc: "",
       price: "۱۵۰,۰۰۰ تومان",
       img: " ",
     },
     {
       id: 2,
       title: "آیس اسپرسو ترکیب ۵۰/۵۰ ",
-      desc: (
-        <>
-          از برند <a href="https://lemm.coffee/shop/%D9%82%D9%87%D9%88%D9%87/P84-%D9%82%D9%87%D9%88%D9%87-100-%D8%B9%D8%B1%D8%A8%DB%8C%DA%A9%D8%A7.html#%D9%86%D9%88%D8%B9-%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8-8-62" target="_blank" rel="noopener noreferrer">لم</a>
-        </>
-      ),
+      desc: "",
       price: "۱۲۵,۰۰۰ تومان",
       img: " ",
     },
