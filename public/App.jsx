@@ -40,9 +40,6 @@ import meal from "./icons/meal.svg";
 import meald from "./icons/meald.svg";
 import pizza from "./icons/pizza.svg";
 import pizzad from "./icons/pizzad.svg";
-import upl from "./icons/uplight.svg";
-import upd from "./icons/updark.svg";
-
 
 //---------global styles-----------
 const GlobalStyle = createGlobalStyle`
@@ -72,9 +69,9 @@ const BackToTopButton = styled.button`
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background: ${({theme}) => theme.Up.bg};
-  color: ${({theme}) => theme.Up.color};
-  border: ${({theme}) => theme.Up.border};
+  background: ${({ theme }) => theme === 'dark' ? '#4a4a4a' : '#ffffff'};
+  color: ${({ theme }) => theme === 'dark' ? '#ffffff' : '#333333'};
+  border: 2px solid ${({ theme }) => theme === 'dark' ? '#666' : '#e0e0e0'};
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   display: flex;
@@ -88,7 +85,7 @@ const BackToTopButton = styled.button`
   transform: ${({ visible }) => (visible ? 'scale(1)' : 'scale(0.5)')};
 
   &:hover {
-    background: ${({theme}) => theme.Up.hoverbg};
+    background: ${({ theme }) => theme === 'dark' ? '#666' : '#f0f0f0'};
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
@@ -99,10 +96,6 @@ const BackToTopButton = styled.button`
     width: 45px;
     height: 45px;
     font-size: 20px;
-  }
-  
-  .uplogo {
-    opacity: 0.7;
   }
 `;
 
@@ -2048,7 +2041,7 @@ export default function OndamCafeMenu() {
   useEffect(() => {
     const timer = setTimeout(() => {
     setShowSplash(false);
-  }, 5000);
+  }, 10000000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -2299,14 +2292,6 @@ export default function OndamCafeMenu() {
         onClick={scrollToTop}
         aria-label="بازگشت به بالا"
       >
-      <img
-        src={darkMode ? upd : upl}
-        alt="up"
-        className="uplogo"
-        draggable={false}
-        width={30}
-        height={30}
-      />
       </BackToTopButton>
       {showSplash && (
         <SplashOverlay onClick={() => setShowSplash(false)}>
