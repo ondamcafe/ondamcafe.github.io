@@ -1492,7 +1492,7 @@ const productsData = {
     {
       id: 14,
       title: "آیتم سس اضافه",
-      desc: "چیلی، قارچ، چدار، پستو، زرشک",
+      desc: "چیلی، قارچ، چدار، پستو، زرشک.",
       price: "۱۱۰,۰۰۰ تومان",
       img: "https://via.placeholder.com/120x120?text=Saffron_Tea",
     },
